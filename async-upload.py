@@ -80,3 +80,6 @@ def tweet():
 
 	imageTweet = ImageTweet(frame_name)
 	imageTweet.tweet()
+	
+if __name__ == '__main__':
+    app.run()

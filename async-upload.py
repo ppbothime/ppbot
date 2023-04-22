@@ -4,7 +4,38 @@ import cv2
 import random
 import os.path
 
-if __name__ == '__main__':
+import requests
+
+from auth import *
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello, World!'
+
+@app.route('/health')
+def health():
+    tweet()
+    return '200 OK'
+
+@app.route('/auth')
+def auth():
+    getGoogleAuth()
+    return '200 OK'
+
+def ping():
+
+    try:
+        r = requests.head("https://oshi.onrender.com")
+        print(r.status_code)
+
+    except requests.ConnectionError:
+        print("failed to connect")
+
+def tweet():
     
 	file = getRandomFile()
 

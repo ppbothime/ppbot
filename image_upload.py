@@ -42,7 +42,7 @@ class ImageTweet(object):
 
         # Create Tweet with media
         response = client.create_tweet(
-            text=image_path.split(']')[1].split('.')[0]
+            text=image_path.split(']')[1].split('.')[0],
             media_ids=[media.media_id],
         )
         print(f"https://twitter.com/user/status/{response.data['id']}")

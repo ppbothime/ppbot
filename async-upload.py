@@ -66,7 +66,7 @@ def tweet():
 			timestamp_str = "{:02d}h{:02d}m{:02d}s".format(timestamp//3600, (timestamp//60)%60, timestamp%60)
 			
 			# Construct the output file name
-			frame_name = f"{video_name} - {timestamp_str}.png"
+			frame_name = f"{video_name}.png"
 			
 			# Save the frame as a PNG file
 			cv2.imwrite(frame_name, frame)
